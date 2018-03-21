@@ -6,9 +6,9 @@ const passport = require('passport');
 const keys = require('./config/keys');
 const app = express();
 require('./config/mongoose.js')
-require('./routes/routes')(app);
-require('./models/User');
 require('./controllers/passport');
+require('./models/User');
+
 
 app.use(bodyParser.json());
 app.use(
@@ -19,10 +19,12 @@ app.use(
 )
 app.use(passport.initialize());
 app.use(passport.session());
+require('./routes/routes')(app);
 
 
 
 if(process.env.NODE_ENV === 'production'){
+  console.log("prop")
   app.use(express.static('main/build'));
   const path  = require('path');
   app.get('*',(req,res)=>{
