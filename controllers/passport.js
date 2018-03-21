@@ -23,11 +23,11 @@ passport.use(
     const existingUser = await User.findOne({googleId:profile.id})
 
     if(existingUser){
-
+      console.log("update record")
         done(null, existingUser);
       }
       else{
-        console.log(user)
+        console.log("user sup")
         const user = await new User({googleId: profile.id, username:profile.displayName}).save()
         done(null,user);
       }

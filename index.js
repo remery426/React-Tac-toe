@@ -5,6 +5,7 @@ const cookieSession = require('cookie-session');
 const passport = require('passport');
 const keys = require('./config/keys');
 const app = express();
+require('./routes/routes')(app);
 require('./models/User');
 require('./controllers/passport');
 require('./config/mongoose.js')
@@ -19,7 +20,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 
-require('./routes/routes')(app);
+
 if(process.env.NODE_ENV === 'production'){
   app.use(express.static('main/build'));
   const path  = require('path');
