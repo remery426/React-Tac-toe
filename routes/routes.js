@@ -5,8 +5,10 @@ module.exports = function(app){
 
   app.get('/auth/google',
   passport.authenticate('google',{
+
   scope: ['profile','email']
 })
+console.log("login")
 );
 app.get('/auth/google/callback',
 passport.authenticate('google'),
@@ -21,11 +23,11 @@ app.get('/api/logout', (req ,res) =>{
 })
 
 app.get('/api/current_user', (req, res)=> {
-  console.log("hit route")
+  console.log("current user route")
   res.send(req.user);
 })
 app.post('/api/updateRecord',(req,res)=>{
-
+  console.log("update record")
   user.updateRecord(req,res)
 })
 
