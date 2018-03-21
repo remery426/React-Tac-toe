@@ -2,7 +2,7 @@
 var mongoose = require('mongoose');
 var path = require('path')
 var fs = require('fs');
-var models_path = path.join(__dirname, './../models')
+var models_path = path.join(__dirname, '../models')
 const keys = require('./keys');
 mongoose.Promise = global.Promise;
 mongoose.connect(keys.mongoURI)

@@ -5,10 +5,11 @@ const cookieSession = require('cookie-session');
 const passport = require('passport');
 const keys = require('./config/keys');
 const app = express();
+require('./config/mongoose.js')
 require('./routes/routes')(app);
 require('./models/User');
 require('./controllers/passport');
-require('./config/mongoose.js')
+
 app.use(bodyParser.json());
 app.use(
   cookieSession({
