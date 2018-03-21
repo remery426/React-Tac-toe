@@ -8,7 +8,6 @@ module.exports = function(app){
 
   scope: ['profile','email']
 })
-console.log("login")
 );
 app.get('/auth/google/callback',
 passport.authenticate('google'),
