@@ -28,6 +28,7 @@ if(process.env.NODE_ENV === 'production'){
   app.use(express.static('main/build'));
   const path  = require('path');
   app.get('*',(req,res)=>{
+    console.log("route not found" + req.body)
     res.sendFile(path.resolve(__dirname, 'main', 'build', 'index.html'))
   });
 }
