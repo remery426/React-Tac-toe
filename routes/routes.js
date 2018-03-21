@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 const passport =  require('passport');
 var user = require('../controllers/userController.js');
 module.exports = function(app){
-app.get('/auth/google',
+app.get('/api/auth/google',
 passport.authenticate('google',{
   scope: ['profile','email']
 })

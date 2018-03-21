@@ -15,7 +15,7 @@ class Header extends Component{
     }
     else{
       return(
-      <a href= "/auth/google">Login</a>
+      <a href= "/api/auth/google">Login</a>
     )
     }
   }
